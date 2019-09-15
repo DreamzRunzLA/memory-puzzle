@@ -1,8 +1,8 @@
 class Card
     attr_accessor :face_value, :face_up
 
-    def initialize
-        @face_value = ''
+    def initialize(letter='')
+        @face_value = letter
         @face_up = false
     end
 
