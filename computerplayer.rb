@@ -9,7 +9,14 @@ class ComputerPlayer
         @matched_cards = []
     end
 
-    def prompt
-        
+    def recieve_revealed_card
+        return "cocksuck"
     end
+
+    def recieve_match
+        return "dicksuck"
+    end
+
+    
+
 end

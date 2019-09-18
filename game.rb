@@ -1,16 +1,17 @@
 require_relative "board"
 require_relative "card"
 require_relative "humanplayer"
+require_relative "computerplayer"
 require "byebug"
 
 class Game
     attr_accessor :board, :previous_pos, :player
     
-    def initialize
+    def initialize(player)
         @board = Board.new
         @board.populate
         @previous_pos = []
-        @player = HumanPlayer.new
+        @player = player
     end
 
     def play
