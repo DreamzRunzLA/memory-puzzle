@@ -4,7 +4,7 @@ require_relative "game"
 require "byebug"
 
 class ComputerPlayer
-    attr_accessor :board
+    attr_accessor :board, :previous_guesses, :matched_cards, :known_cards
 
     def initialize(board_object)
         @board = board_object
@@ -23,19 +23,25 @@ class ComputerPlayer
 
     def prompt
         input = 0
+        #check through all the matched cards, if you have yet to guess any
+        #card that has been matched, guess one of those matched pairs
         @matched_cards.each do |pair|
             if @previous_guesses.include?(pair) == false
                 input = pair[0]
-                @previous_guesses << pair
                 break
             end
         end
-        if input == 0
+        #if your input variable was not impacted by the logic above, set it
+        #to a random card
+        until @previous_guesses.include?(input) == false && input != 0 do
             input = self.genRand
         end
+        @previous_guesses << input
+        return input
 
-        return @board.[](input).face_value
-
+        #some tests
+        # p "This is the input" + input.to_s
+        # return @board.[](input).face_value
 
     end
 
