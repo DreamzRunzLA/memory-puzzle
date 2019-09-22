@@ -20,11 +20,11 @@ class HumanPlayer
     end
 
     def recieve_revealed_card
-        return "cocksuck"
+        return "var 1"
     end
 
     def recieve_match
-        return "dicksuck"
+        return "var 2"
     end
 
 end

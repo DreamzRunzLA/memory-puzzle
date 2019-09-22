@@ -23,6 +23,11 @@ class Board
 
     end
 
+    def [](pos)
+        x, y = pos
+        return @grid[x][y]
+    end
+
     def render
         board = Hash.new   
         (0..3).each do |row|

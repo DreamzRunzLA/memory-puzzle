@@ -11,11 +11,11 @@ class ComputerPlayer
     end
 
     def recieve_revealed_card(pos, value)
-        return "cocksuck"
+        return "var 1"
     end
 
     def recieve_match(pos1, pos2)
-        return "dicksuck"
+        return "var 2"
     end
 
     def prompt
@@ -31,10 +31,12 @@ class ComputerPlayer
             input = self.genRand
         end
 
-        
+        return @board.[](input).face_value
 
 
     end
+
+    #To access card from Game class, GAMEOBJECT.board.[]([pos1, pos2]).face_value
 
     def genRand
         x = rand(4)
