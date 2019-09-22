@@ -4,8 +4,10 @@ require_relative "game"
 require "byebug"
 
 class HumanPlayer
-    def initialize
+    attr_accessor :board
 
+    def initialize(board_object)
+        @board = board_object
     end
 
     def prompt

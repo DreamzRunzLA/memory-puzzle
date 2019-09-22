@@ -4,7 +4,10 @@ require_relative "game"
 require "byebug"
 
 class ComputerPlayer
-    def initialize
+    attr_accessor :board
+
+    def initialize(board_object)
+        @board = board_object
         @known_cards = Hash.new { |h, k| h[k] = [] }
         @matched_cards = [[[1,2],[2,3]]]
         @previous_guesses = [[[3,0],[0,3]],[[1,1],[1,3]],[[1,2],[2,3]]]
